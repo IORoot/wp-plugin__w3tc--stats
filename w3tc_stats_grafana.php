@@ -10,9 +10,16 @@ Author URI: http://londonparkour.com
 */
 
 
-$metrics = json_decode( get_site_option( 'w3tc_stats_history'));
+$metrics = json_decode(get_site_option( 'w3tc_stats_history'));
 
-$file = plugin_dir_path( __FILE__ ) . '/w3tc_stats.log'; 
-$open = fopen( $file, "a" ); 
-$write = fputs( $open, $metrics ); 
-fclose( $open );
+var_dump($metrics);
+
+function write_to_file($data){
+
+    $file = plugin_dir_path( __FILE__ ) . '/w3tc_stats.log'; 
+    $open = fopen( $file, "a" ); 
+    $write = fputs( $open, $data ); 
+    fclose( $open );
+    return;
+
+}
