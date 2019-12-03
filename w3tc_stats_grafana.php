@@ -33,7 +33,7 @@ if (array_key_exists('triggerstats', $_GET)){
 
     // Iterate over every entry of the array
     foreach ($data as $entry) {
-        $output .= json_encode($entry)."\n"; 
+        $output = json_encode($entry)."\n"; 
     }
 
     // output to the file.
